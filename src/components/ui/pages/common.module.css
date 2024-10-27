@@ -33,6 +33,11 @@
   justify-content: center;
 }
 
+.preloader div {
+  width: 74px;
+  margin: 0 auto;
+}
+
 .question {
   color: #8585ad;
 }
