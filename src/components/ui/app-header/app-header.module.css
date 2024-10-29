@@ -30,6 +30,14 @@
   flex-basis: 35%;
 }
 
+.icon {
+  fill: var(--text-inactive-color);
+}
+
+.icon_active {
+  fill: var(--text-primary-color);
+}
+
 .logo {
   display: flex;
   align-items: center;

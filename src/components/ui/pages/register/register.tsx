@@ -7,9 +7,11 @@ import {
 import styles from '../common.module.css';
 import { Link } from 'react-router-dom';
 import { RegisterUIProps } from './type';
+import { Preloader } from '@ui';
 
 export const RegisterUI: FC<RegisterUIProps> = ({
   errorText,
+  isLoading,
   email,
   setEmail,
   handleSubmit,
@@ -67,6 +69,11 @@ export const RegisterUI: FC<RegisterUIProps> = ({
             <p className={`${styles.error} text text_type_main-default pb-6`}>
               {errorText}
             </p>
+          )}
+          {isLoading && (
+            <div className={styles.preloader}>
+              <Preloader />
+            </div>
           )}
         </>
       </form>
