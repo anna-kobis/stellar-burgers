@@ -1,7 +1,11 @@
-import { fetchOrdersThunk, userOrdersSlice } from './user-orders-slice';
+import {
+  fetchOrdersThunk,
+  userOrdersSlice,
+  initialState as userOrdersInitialState
+} from './user-orders-slice';
 
 export const userOrdersActions = {
   ...userOrdersSlice.actions,
   fetchOrdersThunk
 };
-export { userOrdersSlice };
+export { userOrdersSlice, userOrdersInitialState };

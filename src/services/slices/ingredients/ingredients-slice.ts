@@ -9,11 +9,11 @@ export const fetchIngredientsThunk = createAsyncThunk<TIngredient[]>(
   getIngredientsApi
 );
 
-type TIngredientsSliceState = TThunkSliceState & {
+export type TIngredientsSliceState = TThunkSliceState & {
   ingredients: TIngredient[];
 };
 
-const initialState: TIngredientsSliceState = {
+export const initialState: TIngredientsSliceState = {
   ingredients: [],
   isLoading: false,
   error: null
@@ -31,7 +31,7 @@ export const ingredientsSlice = createSlice({
       })
       .addCase(fetchIngredientsThunk.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.error.message ?? null;
+        state.error = action.error.message || null;
       })
       .addCase(fetchIngredientsThunk.fulfilled, (state, action) => {
         state.isLoading = false;

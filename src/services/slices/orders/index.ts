@@ -1,7 +1,8 @@
 import {
   fetchOrderByNumberThunk,
   fetchOrderBurgerThunk,
-  ordersSlice
+  ordersSlice,
+  initialState as ordersInitialState
 } from './orders-slice';
 
 export const ordersActions = {
@@ -9,4 +10,4 @@ export const ordersActions = {
   fetchOrderByNumberThunk,
   fetchOrderBurgerThunk
 };
-export { ordersSlice };
+export { ordersSlice, ordersInitialState };
