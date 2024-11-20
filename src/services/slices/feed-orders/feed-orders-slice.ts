@@ -9,9 +9,9 @@ export const fetchFeedsThunk = createAsyncThunk<TOrdersData>(
   getFeedsApi
 );
 
-type TFeedOrdersSliceState = TThunkSliceState & TOrdersData;
+export type TFeedOrdersSliceState = TThunkSliceState & TOrdersData;
 
-const initialState: TFeedOrdersSliceState = {
+export const initialState: TFeedOrdersSliceState = {
   orders: [],
   total: 0,
   totalToday: 0,
@@ -31,7 +31,7 @@ export const feedOrdersSlice = createSlice({
       })
       .addCase(fetchFeedsThunk.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.error.message ?? null;
+        state.error = action.error.message || null;
       })
       .addCase(fetchFeedsThunk.fulfilled, (state, action) => {
         state.isLoading = false;

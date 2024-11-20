@@ -38,12 +38,12 @@ export const fetchLogoutUserThunk = createAsyncThunk(
   logoutApi
 );
 
-type TUserSliceState = TThunkSliceState & {
+export type TUserSliceState = TThunkSliceState & {
   user: TUser | null;
   isUserChecked: boolean;
 };
 
-const initialState: TUserSliceState = {
+export const initialState: TUserSliceState = {
   user: null,
   isUserChecked: false,
   isLoading: false,
@@ -88,7 +88,7 @@ export const userSlice = createSlice({
         isActionRejected(USER_SLICE_NAME),
         (state, action: RejectedAction) => {
           state.isLoading = false;
-          state.error = action.error.message ?? null;
+          state.error = action.error.message || null;
         }
       );
   },

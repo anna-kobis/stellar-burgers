@@ -14,12 +14,12 @@ export const fetchOrderBurgerThunk = createAsyncThunk<
   string[]
 >(`${ORDERS_SLICE_NAME}/fetchOrderBurger`, orderBurgerApi);
 
-type TOrdersSliceState = TThunkSliceState & {
+export type TOrdersSliceState = TThunkSliceState & {
   previewOrder: TOrder | null;
   newOrder: TOrder | null;
 };
 
-const initialState: TOrdersSliceState = {
+export const initialState: TOrdersSliceState = {
   previewOrder: null,
   newOrder: null,
   isLoading: false,
@@ -43,7 +43,7 @@ export const ordersSlice = createSlice({
       })
       .addCase(fetchOrderByNumberThunk.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.error.message ?? null;
+        state.error = action.error.message || null;
       })
       .addCase(fetchOrderByNumberThunk.fulfilled, (state, action) => {
         state.isLoading = false;
@@ -55,7 +55,7 @@ export const ordersSlice = createSlice({
       })
       .addCase(fetchOrderBurgerThunk.rejected, (state, action) => {
         state.isLoading = false;
-        state.error = action.error.message ?? null;
+        state.error = action.error.message || null;
       })
       .addCase(fetchOrderBurgerThunk.fulfilled, (state, action) => {
         state.isLoading = false;

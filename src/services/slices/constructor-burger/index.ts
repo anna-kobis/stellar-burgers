@@ -1,6 +1,9 @@
-import { constructorBurgerSlice } from './constructor-burger-slice';
+import {
+  constructorBurgerSlice,
+  initialState as constructorBurgerInitialState
+} from './constructor-burger-slice';
 
 export const constructorBurgerActions = {
   ...constructorBurgerSlice.actions
 };
-export { constructorBurgerSlice };
+export { constructorBurgerSlice, constructorBurgerInitialState };

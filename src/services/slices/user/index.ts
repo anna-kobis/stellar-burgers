@@ -4,7 +4,8 @@ import {
   fetchUserThunk,
   fetchUpdateUserThunk,
   fetchLogoutUserThunk,
-  userSlice
+  userSlice,
+  initialState as userInitialState
 } from './user-slice';
 
 export const userActions = {
@@ -15,4 +16,4 @@ export const userActions = {
   fetchUpdateUserThunk,
   fetchLogoutUserThunk
 };
-export { userSlice };
+export { userSlice, userInitialState };
